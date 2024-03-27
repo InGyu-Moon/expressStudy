@@ -10,15 +10,6 @@ app.use(express.json());
 
 app.use('/user', userRouter);
 
-// import { UserModel } from './src/models/user';
-// app.post('/user',(req,res)=>{
-//   const {name,age} = req.body;
-//   UserModel.saveUser(name, age);
-//   res.status(201);
-// });
-
-
-
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
