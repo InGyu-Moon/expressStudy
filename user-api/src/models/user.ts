@@ -29,14 +29,14 @@ export class User{
         console.log(userEmail,' 추가 완료');
 
     }
-    // public static async updateUser(username: string, password: string, nickname: string, age:number): Promise<void>{
-    //     await UserModel.updateOne({ username }, { password, nickname, age });
-    //     console.log(username,'수정 완료');
-    // }
-    // public static async deleteByUsername(username: string): Promise<void>{
-    //     await UserModel.deleteOne({username: username});
-    //     console.log(username,' 삭제 완료');
-    // }
+    public static async updateUser(userEmail: string, password: string, nickname: string): Promise<void>{
+        await UserModel.updateOne({ userEmail }, { password, nickname});
+        console.log(userEmail,'수정 완료');
+    }
+    public static async deleteByNickname(nickname: string): Promise<void>{
+        await UserModel.deleteOne({nickname: nickname});
+        console.log(nickname,' 삭제 완료');
+    }
 }
 
 export const UserModel = getModelForClass(User);
